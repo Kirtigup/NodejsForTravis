@@ -1,5 +1,9 @@
 language: node_js
 node_js:
    - "7"
+service:
+ - docker
 script:
-   - node NodejsProgram.js
+ - docker build -t kirtigupta123/js-Img .
+ - docker images
+ - node NodejsProgram.js
