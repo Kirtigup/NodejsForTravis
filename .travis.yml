@@ -1,0 +1,8 @@
+language: node_js
+services:
+  - docker
+script:
+ - docker build -t kirtigupta123/nodejsImg .
+ - docker images
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+ - docker push kirtigupta123/nodejsImg
